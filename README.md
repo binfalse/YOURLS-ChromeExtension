@@ -26,11 +26,16 @@ The extension provides two different ways for interaction:
 
 Click the icon to shorten the URL of the web site you're currently visiting and a popup will appear. If you've configured the extension to ask for a keyword the popup will contain a textfield and a button. Just type the keyword into the field and press the button to start shortening. In case you didn't set the *Ask for a keyword* tick, the extension will shorten the URL immediately.
 
+![The popup produced by the extension](http://binfalse.de/wp-content/uploads/2013/10/yourls-chrome-popup.png)
+
+
 ### The Context Menu
 
 If you right-click a link on a page an entry in your context menu will appear saying *"Shorten Link"*. Klick this item to shorten the target of this link instead the URL of the current page.  
 Furthermore, if you right-click selected text in the current page the extension adds a context menu entry *"Shorten Page"* to shorten the page using the selected text as keyword. (The selection will just appear in the textfield for the keyword, you still have to press the button to start shortening.)  
 If you right-click a link while some other text is selected, the selected text will be used as keyword for shortening the link target.
+
+![The resulting overlay after clicking the context menu](http://binfalse.de/wp-content/uploads/2013/10/yourls-chrome-rightclick.png)
 
 ### Last Words
 
