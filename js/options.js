@@ -30,6 +30,7 @@ function RestoreOptions ()
 	var secret = document.getElementById ('secret');
 	var keyword = document.getElementById ('keyword');
 	var wait = document.getElementById ('wait');
+	var qrcode = document.getElementById ('qrcode');
 	
 	if (typeof localStorage['yourls_url'] !== 'undefined')
 		url.value   = localStorage['yourls_url'];
@@ -39,6 +40,8 @@ function RestoreOptions ()
 		keyword.checked = localStorage['yourls_keyword'] === "true";
 	if (typeof localStorage['yourls_wait'] !== 'undefined')
 		wait.value = localStorage['yourls_wait'];
+	if (typeof localStorage['yourls_qrcode'] !== 'undefined')
+		qrcode.checked = localStorage['yourls_qrcode'] === "true";
 	
 }
 function SaveOptions (e)
@@ -48,10 +51,12 @@ function SaveOptions (e)
 	var info  = document.getElementById ('info');
 	var keyword = document.getElementById ('keyword');
 	var wait = document.getElementById ('wait');
+	var qrcode = document.getElementById ('qrcode');
 	
 	localStorage['yourls_url'] = url.value;
 	localStorage['yourls_secret'] = secret.value;
 	localStorage['yourls_keyword'] = keyword.checked;
+	localStorage['yourls_qrcode'] = qrcode.checked;
 	if (isInt (wait.value))
 		localStorage['yourls_wait'] = wait.value;
 	

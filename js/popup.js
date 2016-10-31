@@ -87,6 +87,19 @@ function shorten (url)
 	{
 		logg ("popup reveives message: shortenLink");
 		updateShort (response.url);
+		
+		if (localStorage['yourls_qrcode']	== "true"){
+			var createqrcode = new QRCode("qrcode", {
+    			text: response.url,
+    			width: 128,
+    			height: 128,
+    			colorDark : "#000000",
+    			colorLight : "#ffffff",
+    			correctLevel : QRCode.CorrectLevel.M
+			});
+			document.getElementById("qrcode").style.marginTop = '20px';	
+		}	
+		
 		// select the short url -> ^c
 		var range = document.createRange();
 		range.selectNode(document.getElementById ("___yourls_done"));

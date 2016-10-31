@@ -1,0 +1,1 @@
+For creating qr-codes this project uses qrcodejs (https://github.com/davidshimjs/qrcodejs) which is licensed under MIT License. This license can be found in the qrcodejs sub-directory.
