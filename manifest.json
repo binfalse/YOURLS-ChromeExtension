@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2,
 	"name": "YOURLS",
-	"version": "1.0",
-	"description": "Quick link shortening addon for Yourls users",
+	"version": "1.1",
+	"description": "Shorten URLs with your own YOURLS instance",
 	"options_page": "html/options.html",
 	"browser_action":
 	{
