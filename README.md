@@ -7,13 +7,13 @@ This is an extension for Chromium (Google's web browser) to interact with the op
 The extension is available from Googles [web store](https://chrome.google.com/webstore/detail/yourls/nddaaiojgkoldnhnmkoldmkeocbooken).
 To install the latest dev version just clone this repository and load this extension *unpacked* ([read more at Googles dev get-started-guide](http://developer.chrome.com/extensions/getstarted.html#unpacked))
 
-Before you can start shortening URLs you need to do some configuration. To open the configuration page right-click the icon next to your address bar and choose *Options*, or open `chrome://extensions/` an click the *Options* link of the YOURLS entry. You'll see a page similar to the following image:
+Before you can start shortening URLs you need to do some configuration. To open the configuration page right-click the icon next to your address bar and choose *Options*, or open `chrome://extensions/` and click the *Options* link of the YOURLS entry. You'll see a page similar to the following image:
 
 ![Screenshot of the options page](http://binfalse.de/wp-content/uploads/2013/10/yourls-chrome-options.png)
 
 * **API URL:** Specify the URL to your YOURLS instance. Don't forget the leading `http://`. For those of you familiar with YOURLS: **don't** include `yourls-api.php`, I'll take care of it ;)
 * **Signature:** the signature is the secret for your YOURLS account, so you don't have to give anyone your credentials. You'll find the signature token of your account in the admin interface of your YOURLS installation.
-* **How many seconds to wait for an answer?**: when you try to shorten a URL the extension will send an XMLHTTPRequest to the webserver running the YOURLS instance. Depending on the performance of network and webserver it may take some time to get an answer. Configure the max time to wait before the extension assumes that the request failed. In this case you'll get an error message.
+* **How many seconds to wait for an answer?**: when you try to shorten a URL the extension will send an `XMLHTTPRequest` to the webserver running the YOURLS instance. Depending on the performance of network and webserver it may take some time to get an answer. Configure the max time to wait before the extension assumes that the request failed. In this case you'll get an error message.
 * **Ask for a keyword:** check this box to provide a keyword for shortening. If it is checked you'll get a text field before the URL is sent to the webserver, otherwise the extensions shortens the URL immediately.
 
 If the form is filled correctly save your settings and give it a try!
