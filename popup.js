@@ -113,7 +113,7 @@
 			chrome.tabs.query({active: true, currentWindow: true}, _haveTab);//, _tabQueryError);
 		} else {
 			updateSource('Extension not configured');
-			updateResult('Go to about:addons', "");
+			updateResult('Go to chrome://extensions/ or click "settings"', "");
 		}
 	};
 	var _optionsError = function(err) {
