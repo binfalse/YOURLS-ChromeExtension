@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+/*
+ * Copyright 2013-2018  Martin Scharm <https://binfalse.de/contact/>
+ * 
+ * This file is part of the YOURLS-ChromeExtension.
+ * https://github.com/binfalse/YOURLS-ChromeExtension
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="options.css" />
+	</head>
+	<body>
+		<form>
+			<table border="0">
+				<tr>
+					<td><label for="api">Server URL</label></td>
+					<td><input type="text" id="api"/></td>
+				</tr>
+				<tr>
+					<td><label for="signature">Signature</label></td>
+					<td><input type="text" id="signature"/></td>
+				</tr>
+				<tr>
+					<td><label for="keyword">Ask for a keyword?</label></td>
+					<td><input type="checkbox" id="keyword"/></td>
+				</tr>
+				<tr>
+					<td><label for="copy">Auto-copy result to clipboard?</label></td>
+					<td><input type="checkbox" id="copy"/></td>
+				</tr>
+				<tr>
+					<td><label for="maxwait">Max wait time (in seconds)</label></td>
+					<td><input type="text" id="maxwait" value="5"/></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit" id="button">Test and Save</button></td>
+				</tr>
+			</table>
+			<div id="message">
+				<strong id="message_title">
+				</strong>
+				<div id="message_supp">
+					<p>The <strong>Server URL</strong> is basically the link to the web interface of your YOURLS instance. You just need to provide the path to the login screen, the extension will care about the rest!</p>
+					<p>The <strong>signature</strong> can be obtained from the "Tools" section in the admin interface. It allows for passwordless API calls.</p>
+					<p>Tick the <strong>keyword box</strong> to provide a keyword before shortening. The YOURLS server will try to use the keyword as short URL, but may strip illegal characters. If you leave the checkbox unticked, the extension will request a short URL immediately without further confirmation.</p>
+					<p>For convenience, the resulting short URL can automatically be copied to your clipboard. Just tick the <strong>auto-copy</strong> checkbox.</p>
+					<p>Sometimes internet and servers may be slow or unresponsive. You can configure a timeout before we will give up waiting for an answer. The <strong>max wait</strong> time is in seconds and defaults to 5s.</p>
+				</div>
+			</div>
+		</form>
+		<script src="lib.js"></script>
+		<script src="options.js"></script>
+	</body>
+</html>

@@ -1,48 +1,44 @@
 {
 	"manifest_version": 2,
 	"name": "YOURLS",
-	"version": "1.1",
+	"short_name": "YOURLS",
+	"version": "2.1",
+	"author": "Martin Scharm <https://binfalse.de/contact/>",
 	"description": "Shorten URLs with your own YOURLS instance",
-	"options_page": "html/options.html",
-	"browser_action":
-	{
-		"default_icon": "img/logo48.png",
-		"default_popup": "html/popup.html"
-	},
 	"icons":
 	{
 		"16": "img/logo16.png",
+		"19": "img/logo19.png",
+		"38": "img/logo38.png",
 		"48": "img/logo48.png",
 		"128": "img/logo128.png"
 	},
 	"permissions":
 	[
-		"tabs",
+	"activeTab",
+	"storage",
 		"clipboardWrite",
 		"contextMenus",
-		"unlimitedStorage",
 		"http://*/*",
 		"https://*/*"
 	],
-	"web_accessible_resources":
-	[
-		"js/popup.js",
-		"css/style.css"
-	],
-	"content_scripts":
-	[
-		{
-			"js": ["js/popup.js"],
-			"matches":
-			[
-				"http://*/*",
-				"https://*/*"
-			],
-			"all_frames": true
-		}
-	],
 	"background":
 	{
-		"scripts": ["js/context.js", "js/background.js"]
+		"scripts": ["background.js"]
+	},
+	"options_ui": {
+		"page": "options.html"
+	},
+	"browser_action": {
+		"default_icon":
+		{
+			"16": "img/logo16.png",
+			"19": "img/logo19.png",
+			"38": "img/logo38.png",
+			"48": "img/logo48.png",
+			"128": "img/logo128.png"
+		},
+		"default_title": "YOURLS",
+		"default_popup": "popup.html"
 	}
 }

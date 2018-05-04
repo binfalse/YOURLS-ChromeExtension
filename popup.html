@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+/*
+ * Copyright 2013-2018  Martin Scharm <https://binfalse.de/contact/>
+ * 
+ * This file is part of the YOURLS-ChromeExtension.
+ * https://github.com/binfalse/YOURLS-ChromeExtension
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="popup.css" />
+	</head>
+	<body>
+		<h3><img id='headlineicon' src='yourls-tight.svg' alt='' title='YOURLS icon'> Shorten URL with YOURLS</h3>
+		<table class="display_table">
+			<tr>
+				<td>
+					Source URL:
+				</td>
+				<td><strong id="source_url"></strong>
+				</td>
+			</tr>
+			<tr id="keyword_row">
+				<td>
+					Keyword:
+				</td>
+				<td>
+					<input type="text" id="keyword" placeholder="Leave empty to generate" />
+					<input type="button" id="keyword_submit" value="shorten"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Short URL:
+				</td>
+				<td>
+					<input type="text" id="result_url" placeholder="Result" readonly/>
+					<input type="button" id="result_copy" value="copy"/>
+				</td>
+			</tr>
+		</table>
+		<div id="message">
+			<strong id="message_title"></strong>
+			<div id="message_supp"></div>
+		</div>
+		<div id="links">
+			<button id="settings">Settings</button>
+			<button id="admin">YOURLS admin interface</button>
+		</div>
+		<script src="lib.js"></script>
+		<script src="popup.js"></script>
+	</body>
+</html>
