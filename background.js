@@ -40,7 +40,7 @@ function getSelectionText() {
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
 	if (info.menuItemId === "yourls") {
-		chrome.browserAction.openPopup();
+		chrome.browserAction.openPopup (function (){});
 	}
 });
 
