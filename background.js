@@ -91,7 +91,7 @@ chrome.runtime.onMessage.addListener (function(request, sender, sendResponse)
 						 action: 'version',
 				 signature: settings.signature,
 					 },
-				 '^.*<version>(\\d+\\.\\d+.*)<\\/version>.*$'
+				 '.*<version>(\\d+\\.\\d+.*)<\\/version>.*'
 		).then(function(result) {
 			chrome.storage.local.set(settings, function (){
 				sendResponse (result);});
