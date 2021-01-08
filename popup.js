@@ -77,7 +77,16 @@
 	var _gotSettings = function(settings) {
 		if (settings.api && settings.signature) {
 			var _haveTab = function(tabs) {
-				updateSource(tabs[0].url);
+				var long_url = tabs[0].url;
+				
+				chrome.runtime.sendMessage({method: "getLinkTarget"}, function (response) {
+					if (response.linkTarget) {
+						long_url = response.linkTarget;
+						updateSource(long_url);
+					}
+				});
+				
+				updateSource(long_url);
 				
 				
 				document.getElementById('admin').addEventListener(
@@ -96,14 +105,14 @@
 					document.getElementById('keyword_submit').addEventListener(
 						'click',
 						function(se) {
-							shorten (settings, tabs[0].url, document.getElementById('keyword').value);
+							shorten (settings, long_url, document.getElementById('keyword').value);
 						}
 					);
 				} else {
 					var keywordrow = document.getElementById('keyword_row');
 					keywordrow.parentNode.removeChild(keywordrow);
 					updateResult("", "Working...");
-					shorten (settings, tabs[0].url);
+					shorten (settings, long_url);
 				}
 			};
 			var _tabQueryError = function(error) {

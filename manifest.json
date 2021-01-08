@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "YOURLS",
 	"short_name": "YOURLS",
-	"version": "2.1.2",
+	"version": "2.2.0",
 	"author": "Martin Scharm <https://binfalse.de/contact/>",
 	"description": "Shorten URLs with your own YOURLS instance",
 	"icons":
