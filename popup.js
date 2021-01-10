@@ -77,43 +77,42 @@
 	var _gotSettings = function(settings) {
 		if (settings.api && settings.signature) {
 			var _haveTab = function(tabs) {
-				var long_url = tabs[0].url;
 				
 				chrome.runtime.sendMessage({method: "getLinkTarget"}, function (response) {
+					var long_url = tabs[0].url;
 					if (response.linkTarget) {
 						long_url = response.linkTarget;
-						updateSource(long_url);
 					}
-				});
-				
-				updateSource(long_url);
-				
-				
-				document.getElementById('admin').addEventListener(
-					'click',
-					function(se) {
-						window.open(settings.api + "admin/");
-					}
-				);
-				
-				if (settings.keyword) {
-					chrome.runtime.sendMessage({method: "getSelection"}, function (response) {
-						document.getElementById('keyword').value = response.selection;
-					});
+					updateSource(long_url);
 					
-					updateResult("", "Waiting for keyword...");
-					document.getElementById('keyword_submit').addEventListener(
+					document.getElementById('admin').addEventListener(
 						'click',
 						function(se) {
-							shorten (settings, long_url, document.getElementById('keyword').value);
+							window.open(settings.api + "admin/");
 						}
 					);
-				} else {
-					var keywordrow = document.getElementById('keyword_row');
-					keywordrow.parentNode.removeChild(keywordrow);
-					updateResult("", "Working...");
-					shorten (settings, long_url);
-				}
+					
+					
+					if (settings.keyword) {
+						chrome.runtime.sendMessage({method: "getSelection"}, function (response) {
+							document.getElementById('keyword').value = response.selection;
+						});
+						
+						updateResult("", "Waiting for keyword...");
+						document.getElementById('keyword_submit').addEventListener(
+							'click',
+							function(se) {
+								shorten (settings, long_url, document.getElementById('keyword').value);
+							}
+						);
+					} else {
+						var keywordrow = document.getElementById('keyword_row');
+						keywordrow.parentNode.removeChild(keywordrow);
+						updateResult("", "Working...");
+						shorten (settings, long_url);
+					}
+					
+				});
 			};
 			var _tabQueryError = function(error) {
 				updateSource('Cannot get current tab URL!');
